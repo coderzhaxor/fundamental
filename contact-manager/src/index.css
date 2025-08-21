@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer utilities {
+  input {
+    @apply block font-normal text-white/70
+  }
+
+  label {
+    @apply font-medium
+  }
+}
