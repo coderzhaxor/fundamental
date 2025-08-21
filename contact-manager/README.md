@@ -38,10 +38,15 @@ Aplikasi CRUD sederhana untuk mengelola daftar kontak. Dibuat menggunakan **Reac
 3. **Buat file `.env`**
    Tambahkan URL API di root project:
    ```
-   VITE_API_URL=http://localhost:3000/contacts
+   VITE_API_URL=http://localhost:8000/contacts
    ```
 
-4. **Jalankan Aplikasi**
+4. **Jalankan JSON Server**
+   ```bash
+   npx json-server --watch db.json --port 8000
+   ```
+
+5. **Jalankan Aplikasi**
    ```bash
    npm run dev
    ```
@@ -53,11 +58,12 @@ Aplikasi CRUD sederhana untuk mengelola daftar kontak. Dibuat menggunakan **Reac
 contact-manager/
 ├── src/
 │   ├── App.jsx        # Komponen utama
-│   ├── main.jsx       # Entry point React
+│   ├── main.jsx       
 │   └── ...
 ├── public/
 ├── .env               # Environment variable
 ├── .gitignore
+├── db.json            # Database JSON Server
 ├── package.json
 └── README.md
 ```
@@ -82,3 +88,19 @@ contact-manager/
 | POST     | `/contacts`          | Tambahkan kontak baru  |
 | PUT      | `/contacts/:id`      | Perbarui kontak        |
 | DELETE   | `/contacts/:id`      | Hapus kontak           |
+
+---
+
+## Contoh `db.json`
+```json
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Alif Januantara Prima",
+      "telp": "089636314271"
+    }
+  ]
+}
+
+```
